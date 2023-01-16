@@ -2832,7 +2832,7 @@
           "width": 275,
           "height": 227,
           "minimized": false,
-          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves sprite to the corresponding screen space position"
+          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves object to the corresponding screen space position"
         },
         "eC": {
           "blockId": "x",
@@ -83023,7 +83023,7 @@
           "width": 275.00927734375,
           "height": 227.78121948242188,
           "minimized": false,
-          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves sprite to the corresponding screen space position"
+          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves object to the corresponding screen space position"
         },
         "eu": {
           "blockId": "t",
@@ -89222,7 +89222,7 @@
               1,
               [
                 10,
-                "WorldSprites"
+                "Worldobjects"
               ]
             ]
           },
@@ -105785,7 +105785,7 @@
               1,
               [
                 10,
-                "WorldSprites"
+                "Worldobjects"
               ]
             ]
           },
@@ -110190,7 +110190,7 @@
           "width": 275,
           "height": 227,
           "minimized": false,
-          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves sprite to the corresponding screen space position"
+          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves object to the corresponding screen space position"
         },
         "eC": {
           "blockId": "x",
@@ -116043,7 +116043,7 @@
               1,
               [
                 10,
-                "WorldSprites"
+                "Worldobjects"
               ]
             ]
           },
@@ -122711,7 +122711,7 @@
           "width": 275,
           "height": 227,
           "minimized": false,
-          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves sprite to the corresponding screen space position"
+          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves object to the corresponding screen space position"
         },
         "eC": {
           "blockId": "x",
@@ -125565,7 +125565,7 @@
           "topLevel": false
         },
         "#Q": {
-          "opcode": "event_whenthisspriteclicked",
+          "opcode": "event_whenthisobjectclicked",
           "next": "i)",
           "parent": null,
           "inputs": {
@@ -126078,7 +126078,7 @@
           },
           "fields": {
             "STOP_OPTION": [
-              "other scripts in sprite",
+              "other scripts in object",
               null
             ]
           },
@@ -126380,7 +126380,7 @@
               1,
               [
                 10,
-                "WorldSprites"
+                "Worldobjects"
               ]
             ]
           },
@@ -131481,7 +131481,7 @@
           },
           "fields": {
             "STOP_OPTION": [
-              "other scripts in sprite",
+              "other scripts in object",
               null
             ]
           },
@@ -131546,7 +131546,7 @@
           },
           "fields": {
             "STOP_OPTION": [
-              "other scripts in sprite",
+              "other scripts in object",
               null
             ]
           },
@@ -131587,7 +131587,7 @@
           },
           "fields": {
             "STOP_OPTION": [
-              "other scripts in sprite",
+              "other scripts in object",
               null
             ]
           },
@@ -145089,7 +145089,7 @@
           },
           "fields": {
             "STOP_OPTION": [
-              "other scripts in sprite",
+              "other scripts in object",
               null
             ]
           },
@@ -151616,7 +151616,7 @@
           },
           "fields": {
             "STOP_OPTION": [
-              "other scripts in sprite",
+              "other scripts in object",
               null
             ]
           },
@@ -151721,7 +151721,7 @@
           },
           "fields": {
             "STOP_OPTION": [
-              "other scripts in sprite",
+              "other scripts in object",
               null
             ]
           },
@@ -170710,7 +170710,7 @@
           "width": 275,
           "height": 227,
           "minimized": false,
-          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves sprite to the corresponding screen space position"
+          "text": "go to (x,y)  block for world space coordinates\n\nInputs: \nan (x, y) coordinate \n\nResult:\nmoves object to the corresponding screen space position"
         },
         "eC": {
           "blockId": "x",
@@ -170765,7 +170765,7 @@
       "params": {
         "LIST": "level data"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -170782,7 +170782,7 @@
       "params": {
         "LIST": "temp level list"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -170799,7 +170799,7 @@
       "params": {
         "VARIABLE": "fps"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -170817,7 +170817,7 @@
       "params": {
         "LIST": "@Commands"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -170834,7 +170834,7 @@
       "params": {
         "VARIABLE": "#cameraX"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -170852,7 +170852,7 @@
       "params": {
         "VARIABLE": "#cameraY"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -170870,7 +170870,7 @@
       "params": {
         "VARIABLE": "#cameraZ"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -170888,7 +170888,7 @@
       "params": {
         "LIST": "Objects"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -170905,7 +170905,7 @@
       "params": {
         "LIST": "Settings"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -170922,7 +170922,7 @@
       "params": {
         "LIST": "Shapes"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -170939,7 +170939,7 @@
       "params": {
         "LIST": "Vertices"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -170956,7 +170956,7 @@
       "params": {
         "LIST": "Contact Points"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -170973,7 +170973,7 @@
       "params": {
         "VARIABLE": "#DT"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -170991,7 +170991,7 @@
       "params": {
         "VARIABLE": "animation frame player"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171009,7 +171009,7 @@
       "params": {
         "LIST": "_objectNames"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171026,7 +171026,7 @@
       "params": {
         "VARIABLE": "on edge"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171044,7 +171044,7 @@
       "params": {
         "VARIABLE": "#FPS"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171062,7 +171062,7 @@
       "params": {
         "VARIABLE": "i"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171080,7 +171080,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171098,7 +171098,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171116,7 +171116,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171134,7 +171134,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171152,7 +171152,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171170,7 +171170,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171188,7 +171188,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171206,7 +171206,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171224,7 +171224,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171242,7 +171242,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171260,7 +171260,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171278,7 +171278,7 @@
       "params": {
         "VARIABLE": "selected level"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171296,7 +171296,7 @@
       "params": {
         "VARIABLE": "players"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171314,7 +171314,7 @@
       "params": {
 
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171332,7 +171332,7 @@
       "params": {
         "VARIABLE": "@Commands"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171350,7 +171350,7 @@
       "params": {
         "VARIABLE": "Global vars"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171368,7 +171368,7 @@
       "params": {
         "VARIABLE": "temp clone data button"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171386,7 +171386,7 @@
       "params": {
         "LIST": "debug"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171403,7 +171403,7 @@
       "params": {
         "VARIABLE": "tween on?"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171421,7 +171421,7 @@
       "params": {
         "LIST": "local map"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171438,7 +171438,7 @@
       "params": {
         "LIST": "colors"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171455,7 +171455,7 @@
       "params": {
         "VARIABLE": "Player object id"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171473,7 +171473,7 @@
       "params": {
         "LIST": "@Custom Shape"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171490,7 +171490,7 @@
       "params": {
         "LIST": "objects on screen"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171507,7 +171507,7 @@
       "params": {
         "LIST": "Constraints"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171524,7 +171524,7 @@
       "params": {
         "VARIABLE": "can jump"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171542,7 +171542,7 @@
       "params": {
         "LIST": "Text queue"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171559,7 +171559,7 @@
       "params": {
         "VARIABLE": "text box1"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171577,7 +171577,7 @@
       "params": {
         "VARIABLE": "temp key pressed"
       },
-      "spriteName": "GUI//Typer",
+      "objectName": "GUI//Typer",
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171595,7 +171595,7 @@
       "params": {
         "LIST": "Part temp data"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171612,7 +171612,7 @@
       "params": {
         "LIST": "temp positions editor"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171629,7 +171629,7 @@
       "params": {
         "VARIABLE": "debug"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171647,7 +171647,7 @@
       "params": {
         "VARIABLE": "x offset"
       },
-      "spriteName": "Animation editor//amo,atpr",
+      "objectName": "Animation editor//amo,atpr",
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171665,7 +171665,7 @@
       "params": {
         "VARIABLE": "y offset"
       },
-      "spriteName": "Animation editor//amo,atpr",
+      "objectName": "Animation editor//amo,atpr",
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171683,7 +171683,7 @@
       "params": {
         "LIST": "walk animation"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171700,7 +171700,7 @@
       "params": {
         "LIST": "idle animation"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171717,7 +171717,7 @@
       "params": {
         "LIST": "character offsets"
       },
-      "spriteName": "visualPlayer//Player_character",
+      "objectName": "visualPlayer//Player_character",
       "value": [
 
       ],
@@ -171734,7 +171734,7 @@
       "params": {
         "LIST": "Editor queue"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": [
 
       ],
@@ -171751,7 +171751,7 @@
       "params": {
         "VARIABLE": "[EDITOR] Grid size"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171769,7 +171769,7 @@
       "params": {
         "VARIABLE": "[EDITOR] User Grid size"
       },
-      "spriteName": null,
+      "objectName": null,
       "value": 0,
       "width": 0,
       "height": 0,
@@ -171787,7 +171787,7 @@
       "params": {
         "VARIABLE": "Scroll animation editor"
       },
-      "spriteName": "Animation editor//amo,atpr",
+      "objectName": "Animation editor//amo,atpr",
       "value": 0,
       "width": 0,
       "height": 0,
