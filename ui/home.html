@@ -11,6 +11,15 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="home light">
+    <div class="leftbar">
+        <button class="topbar-button topbar-button-horizontal">Home</button>
+        <button class="topbar-button topbar-button-horizontal">Profile</button>
+        <button class="topbar-button topbar-button-horizontal">Messages</button>
+        <button class="topbar-button topbar-button-horizontal">Friends</button>
+        <button class="topbar-button topbar-button-horizontal">Inventory</button>
+        <button class="topbar-button topbar-button-horizontal">Store</button>
+    </div>
+
     <nav class="topbar" style="display: flex;">
         <a href="home.html"><div class="logo logo-topbar"></div></a>
         <button class="topbar-button">Discover</button>
@@ -18,7 +27,7 @@
         <button class="topbar-button">My Games</button>
 
         <div class="topbar-right">
-            <button class="topbar-icon" style="width: fit-content; display: flex; align-items: center;"><span class="profile-name">@JohnDoe</span><img class="profile-picture" src="assets/home/IMG_1492.png" alt="" height="30px"></button>
+            <button class="topbar-icon" style="width: fit-content; display: flex; align-items: center;"><img class="profile-picture" src="assets/home/profile.png" alt="" height="30px"></button>
             <button class="topbar-icon" style="margin-right: 10px;"><i class="fa-solid fa-gear"></i></button>
         </div>
     </nav>
@@ -27,9 +36,65 @@
         <i class="fa-solid fa-magnifying-glass"></i>
     </div>
 
-
     <main class="content">
+        <div class="home-header" style="display: flex; align-items: center;">
+            <img class="welcome-picture" src="assets/home/profile.png" alt="" height="200px" style="user-select: none; pointer-events: none;">
+            <div class="home-header-right" style="display: inline;">
+                <h1 style="font-size: 50px; user-select: none;">@JohnDoe</h1>
+                <div class="buttons" style="display: flex;">
+                    <button style="margin-right: 2px !important;" class="bg-primary">Profile</button>
+                    <button class="bg-primary">Avatar</button>
+                </div>
+            </div>
+
+        </div>
         
+        <h3 style="font-weight: 600;">Friends (3)</h3>
+        <div class="friends">
+            <div class="friend">
+                <img class="welcome-picture" src="assets/home/profile.png" alt="" height="150px" style="user-select: none; pointer-events: none;">
+                <span style="font-weight: 600;">@Mati3D</span>
+            </div>
+            <div class="friend">
+                <img class="welcome-picture" src="assets/home/profile.png" alt="" height="150px" style="user-select: none; pointer-events: none;">
+                <span style="font-weight: 600;">@TheShovel</span>
+                <span class="chip bg-primary">9+</span>
+            </div>
+            <div class="friend">
+                <img class="welcome-picture" src="assets/home/profile.png" alt="" height="150px" style="user-select: none; pointer-events: none;">
+                <span style="font-weight: 600;">@Explorer</span>
+            </div>
+        </div>
+        <h3 style="width: fit-content; font-weight: 600; margin-top: 230px;">Popular</h3>
+        <div class="games">
+            <div class="card">
+                <div class="game-image">
+
+                </div>
+                <div class="game-info">
+                    <span>Shrek in the Backrooms</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="game-image">
+
+                </div>
+                <div class="game-info">
+                    <span>Survive Shrek</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="game-image">
+
+                </div>
+                <div class="game-info">
+                    <span>Shrek Simulator</span>
+                </div>
+            </div>
+        </div>
+
     </main>
 </body>
 </html>

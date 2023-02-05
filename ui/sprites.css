@@ -43,6 +43,25 @@ body {
     background: rgb(240, 240, 240);
 }
 
+.leftbar {
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    width: 200px;
+    height: calc(100vh - 40px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.dark .leftbar {
+    background: rgb(20, 20, 20);
+}
+
+.light .leftbar {
+    background: rgb(240, 240, 240);
+}
+
 .topbar {
     width: 100vw;
     height: 40px;
@@ -65,8 +84,13 @@ body {
     position: absolute;
     top: 40px;
     left: 0px;
-    width: calc(100vw - 300px);
+    width: calc(100vw);
     height: calc(100vh - 40px);
+}
+
+.home .content {
+    left: 200px !important;
+    width: calc(100vw - 200px) !important;
 }
 
 .section {
@@ -296,23 +320,34 @@ input:checked+.slider:before {
 }
 
 .topbar-button {
-    height: 100%;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding-left: 10px;
-    padding-right: 10px;
-    -webkit-transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
-    user-select: none;
+    height: 100% !important;
+    width: fit-content !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    -webkit-transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    user-select: none !important;
+    display: inline;
+    margin: 0px !important;
+    border-radius: 0 !important;
+}
+
+.topbar-button-horizontal {
+    height: fit-content !important;
+    padding: 10px !important;
+    width: 100% !important;
+    text-align: left !important;
 }
 
 .light .topbar-button:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.1) !important;
 }
 
 .dark .topbar-button:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .light .topbar-button {
@@ -406,8 +441,7 @@ input[type=text], input[type=email], input[type=password] {
     color: rgb(240, 240, 240);
 }
 
-.login button {
-    width: 100%;
+button {
     height: 35px;
     display: flex;
     align-items: center;
@@ -428,25 +462,25 @@ input[type=text], input[type=email], input[type=password] {
     text-align: center;
 }
 
-.light.login button {
+.light button {
     background: white;
 }
 
-.dark.login button {
+.dark button {
     background: rgb(50, 50, 50);
     color: rgb(240, 240, 240);
     border-radius: .2rem;
 }
 
-.light.login button:hover {
+.light button:hover {
     background: rgb(223, 223, 223);
 }
 
-.dark.login button:hover {
+.dark button:hover {
     background: rgb(40, 40, 40);
 }
 
-.right.login button {
+.right button {
     width: 70px;
 }
 
@@ -465,8 +499,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
     border-radius: .2rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    width: 350px;
+    border: 1px solid rgba(0, 0, 0, 0.15);  
+    width: fit-content;
+    float: left;
+}
+
+.login .card {
+    width: 350px !important;
 }
 
 .light .card {
@@ -588,10 +627,15 @@ label.switch {
     height: calc(100% - 10px);
     background-size: contain;
     border: none;
-    background: none;
+    background: none !important;
     font-size: 1.3pc;
-    margin-left: 10px;
+    margin-left: 10px !important;
     cursor: pointer;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+}
+
+.topbar-icon:hover {
+    opacity: .5;
 }
 
 .topbar-right {
@@ -650,7 +694,7 @@ input, button {
     position: absolute;
     top: 40px;
     left: 0px;
-    width: 100vw !important;
+    width: calc(100vw - 300px) !important;
     height: calc(100vh - 40px);
 }
 
@@ -690,4 +734,159 @@ input, button {
 
 .dark .profile-name {
     color:rgb(223, 223, 223);
+}
+
+.home .content {
+    padding: 40px;
+    box-sizing: border-box;
+    display: inline;
+}
+
+.friends .card {
+    width: 140px;
+    height: 190px;
+    margin: 2px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.games .card {
+    width: 140px;
+    height: 140px;
+    margin: 2px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.friends .friend-image {
+    top: 0px;
+    width: 100%;
+    height: 70%;
+    background-image: url(assets/home/IMG_1492.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+
+.games .game-image {
+    top: 0px;
+    width: 100%;
+    height: 80%;
+    background-image: url(assets/home/shrekinthebackrooms.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.games .card:hover {
+    transform: translate(0%, -10%);
+}
+
+.games .card {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+}
+
+.friend-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.game-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    margin: 0px;
+    font-size: .8pc;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.game-info * {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.friend-actions {
+    display: flex;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.friend-actions * {
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: .8pc;
+}
+
+.friend-actions *:hover {
+    opacity: .8;
+}
+
+.light .bg-primary {
+    background:#2196F3;
+    color: rgb(240, 240, 240);
+}
+
+.dark .bg-primary {
+    background: #53aaf1;
+    color: rgb(240, 240, 240);
+}
+
+button.bg-primary:hover {
+    background: #1d7ac7 !important;
+}
+
+.friend {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
+    margin-right: 10px;
+    float: left;
+    user-select: none;
+    cursor: pointer;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+    position: relative;
+}
+
+.light .friend:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: .2rem;
+}
+
+.dark .friend:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: .2rem;
+}
+
+.chip {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    margin: 0px;
+    border-radius: .2rem;
+    line-height: 10px;
 }
