@@ -7,12 +7,20 @@ body {
 
 .dark {
     background: rgb(50, 50, 50);
-    color: rgb(223, 223, 223)
+    color: rgb(223, 223, 223);
 }
 
 .light {
     background: rgb(223, 223, 223);
-    color: rgb(50, 50, 50)
+    color: rgb(50, 50, 50);
+}
+
+.dark i {
+    color: rgb(223, 223, 223);
+}
+
+.light i {
+    color: rgb(50, 50, 50);
 }
 
 .rightbar {
@@ -296,6 +304,7 @@ input:checked+.slider:before {
     padding-right: 10px;
     -webkit-transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    user-select: none;
 }
 
 .light .topbar-button:hover {
@@ -482,7 +491,7 @@ input[type=text], input[type=email], input[type=password] {
 }
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
     user-select: none;
 }
 
@@ -497,20 +506,24 @@ a {
 form .other-options {
     width: 100%;
     display: flex;
-    margin-top: 10px;
+    margin-top: 19px;
     position: relative;
     height: 1pc;
     font-size: .8pc;
 }
 
+form .other-options {
+    text-decoration: none;
+}
+
 form .other-options *:first-child {
     position: absolute;
-    left: 0px;
+    left: 10px;
 }
 
 form .other-options *:last-child {
     position: absolute;
-    right: 0px;
+    right: 10px;
 }
 label.switch {
     margin: 0px;
@@ -534,14 +547,147 @@ label.switch {
 }
 
 .light .logo {
-    background-image: url(assets/login/logo_with_test.png);
+    background-image: url(assets/branding/logo_with_test.png);
 }
 
 .dark .logo {
-    background-image: url(assets/login/logo_with_text_white.png);
+    background-image: url(assets/branding/logo_with_text_white.png);
 }
 
 .logo-topbar {
-    width: 80px;
-    height: 27px;
+    position: relative;
+    float: left;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: calc(100% - 10px);
+    margin-right: 10px;
+    background-size: contain;
+}
+
+.light .logo-topbar {
+    background-image: url(assets/branding/icon_black.png) !important;
+}
+
+.dark .logo-topbar {
+    background-image: url(assets/branding/icon_white.png) !important;
+}
+
+.topbar input {
+    position: relative;
+    top: -1px;
+    margin: 0px;
+}
+
+.topbar-icon {
+    position: relative;
+    float: left;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: calc(100% - 10px);
+    background-size: contain;
+    border: none;
+    background: none;
+    font-size: 1.3pc;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.topbar-right {
+    position: absolute;
+    right: 0px;
+    height: 40px;
+}
+
+.topbar-search {
+    margin: 0;
+    width: 300px;
+    border-radius: .4rem !important;
+    padding-left: 30px !important;
+}
+
+.light .topbar-search:focus ~ .search-container i {
+    color: rgb(20, 20, 20) !important;
+}
+
+.dark .topbar-search:focus ~ .search-container i {
+    color:rgb(240, 240, 240) !important;
+}
+
+.topbar-search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: gray;
+    opacity: 1; /* Firefox */
+    font-weight: 300;
+}
+
+input, button {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.search-container {
+    position: absolute;
+    left: 50%;
+    top: -1px;
+    transform: translate(-50%, 0%);
+    margin: 0;
+}
+
+.search-container input {
+    height: calc(40px - 2px);
+    box-sizing: border-box;
+}
+
+.search-container i {
+    position: absolute;
+    left: 11px;
+    top: 12px;
+    color: gray !important;
+    font-weight: 600;
+}
+
+.home .content {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 100vw !important;
+    height: calc(100vh - 40px);
+}
+
+.input-icons i {
+    position: absolute;
+}
+  
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+
+.profile-picture {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
+
+.light .profile-picture {
+    background: white;
+}
+
+.dark .profile-picture {
+    background: rgb(30, 30, 30);
+}
+
+.profile-name {
+    width: fit-content;
+    font-size: .8pc;
+}
+
+.light .profile-name {
+    color: rgb(20, 20, 20);
+}
+
+.dark .profile-name {
+    color:rgb(223, 223, 223);
 }

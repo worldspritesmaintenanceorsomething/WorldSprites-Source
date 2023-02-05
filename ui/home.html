@@ -11,10 +11,25 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="home light">
-    <nav class="topbar">
-        <div class="logo logo-topbar"></div>
-        <button class="topbar-button">File</button>
-        <button class="topbar-button">Edit</button>
+    <nav class="topbar" style="display: flex;">
+        <a href="home.html"><div class="logo logo-topbar"></div></a>
+        <button class="topbar-button">Discover</button>
+        <button class="topbar-button">Avatar</button>
+        <button class="topbar-button">My Games</button>
+
+        <div class="topbar-right">
+            <button class="topbar-icon" style="width: fit-content; display: flex; align-items: center;"><span class="profile-name">@JohnDoe</span><img class="profile-picture" src="assets/home/IMG_1492.png" alt="" height="30px"></button>
+            <button class="topbar-icon" style="margin-right: 10px;"><i class="fa-solid fa-gear"></i></button>
+        </div>
     </nav>
+    <div class="search-container">
+        <input type="text" placeholder="Search..." class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+
+    <main class="content">
+        
+    </main>
 </body>
 </html>
