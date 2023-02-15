@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 
 body {
     margin: 0px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
 }
 
 .dark {
@@ -70,14 +71,34 @@ body {
     top: 0px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
-.dark .topbar {
-    background: rgb(20, 20, 20);
+.topbar * {
+    z-index: 2000;
 }
 
-.light .topbar {
-    background: rgb(240, 240, 240);
+.dark .topbar::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 41px;
+    background: rgba(20, 20, 20, 0.2);
+    z-index: 500;
+}
+
+.light .topbar::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 41px;
+    background: rgba(240, 240, 240, 0.2);
+    z-index: 0;
 }
 
 .content {
@@ -93,6 +114,16 @@ body {
     width: calc(100vw - 200px) !important;
 }
 
+.avatar .content {
+    left: 200px !important;
+    width: calc(100vw - 200px) !important;
+}
+
+.hero .content {
+    text-align: center;
+    box-sizing: border-box;
+}
+
 .section {
     width: 100%;
     margin: 0px;
@@ -104,7 +135,7 @@ body {
     display: flex;
     padding-left: 8px;
     align-items: center;
-    border-radius: .2rem;
+    border-radius: .5rem;
     box-sizing: border-box;
     margin-bottom: 5px;
     user-select: none;
@@ -123,7 +154,7 @@ body {
     width: 100%;
     padding: 5px;
 
-    border-radius: .2rem;
+    border-radius: .5rem;
     box-sizing: border-box;
 }
 
@@ -154,7 +185,7 @@ body {
 
 .dark .object {
     background: rgb(50, 50, 50);
-    border-radius: .2rem;
+    border-radius: .5rem;
 }
 
 .light .object:hover {
@@ -192,7 +223,7 @@ body {
 
 .dark .property {
     background: rgb(50, 50, 50);
-    border-radius: .2rem;
+    border-radius: .5rem;
 }
 
 .section-content .property:first-child {
@@ -227,7 +258,7 @@ body {
     width: 100px;
     text-align: center;
     padding: 5px;
-    border-radius: .2rem;
+    border-radius: .5rem;
 
 
     /* Position the tooltip text */
@@ -333,6 +364,11 @@ input:checked+.slider:before {
     display: inline;
     margin: 0px !important;
     border-radius: 0 !important;
+    font-size: .9pc !important;
+    padding: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-shadow: none !important;
 }
 
 .topbar-button-horizontal {
@@ -340,6 +376,12 @@ input:checked+.slider:before {
     padding: 10px !important;
     width: 100% !important;
     text-align: left !important;
+    font-size: 1pc !important;
+    padding: 0px !important;
+    padding-left: 10px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    box-shadow: none !important;
 }
 
 .light .topbar-button:hover {
@@ -408,6 +450,7 @@ input:checked+.slider:before {
     height: 100vh;
     box-sizing: border-box;
     flex-direction: column;
+    z-index: 1;
 }
 
 .light.login {
@@ -416,6 +459,23 @@ input:checked+.slider:before {
 
 .dark.login {
     background-image: url(assets/login/Noise\ Dark.png)
+}
+
+.login::before {
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    background-image: url(./assets/hero/62279d6b214710af53a337f3_img-bg-gradient.png);
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.login * {
+    z-index: 1;
 }
 
 form {
@@ -427,10 +487,19 @@ input[type=text], input[type=email], input[type=password] {
     padding: 10px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     outline: none;
-    border-radius: .2rem;
+    border-radius: .5rem;
     margin-bottom: 1px;
     margin-top: 2px;
 }
+
+.light input[type=text], input[type=email], input[type=password] {
+    box-shadow: inset 0 -1px 1px 0 rgb(27 31 35 / 5%), inset 0 1px 1px 0 hsl(0deg 0% 100% / 15%), 0 1px 2px 0 rgb(27 31 35 / 5%);
+}
+
+.dark input[type=text], input[type=email], input[type=password] {
+    box-shadow: inset 0 -1px 1px 0 rgb(27 31 35 / 5%), inset 0 1px 1px 0 hsla(0, 0%, 0%, 0.15), 0 1px 2px 0 rgb(27 31 35 / 5%);
+}
+
 
 .light input {
     background: white;
@@ -445,21 +514,58 @@ button {
     height: 35px;
     display: flex;
     align-items: center;
-    padding-left: 8px;
+    padding: 8px;
     box-sizing: border-box;
     margin-bottom: 1px;
     cursor: pointer;
     user-select: none;
     transition: background .2s cubic-bezier(0.075, 0.82, 0.165, 1);
     border: none;
-    border-radius: .2rem;
-    margin-bottom: 1px;
-    margin-top: 2px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 1pc;
+    border-radius: .5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light button {
+    box-shadow: inset 0 -1px 1px 0 rgb(27 31 35 / 5%), inset 0 1px 1px 0 hsl(0deg 0% 100% / 15%), 0 1px 2px 0 rgb(27 31 35 / 5%);
+}
+
+.dark button {
+    box-shadow: inset 0 -1px 1px 0 rgb(27 31 35 / 5%), inset 0 1px 1px 0 hsla(0, 0%, 0%, 0.15), 0 1px 2px 0 rgb(27 31 35 / 5%);
+}
+
+button.big {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 1px;
+    cursor: pointer;
+    user-select: none;
+    transition: background .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border: none;
+    border-radius: .5rem;
+    margin-bottom: 1px;
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1pc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light button.big {
+    box-shadow: inset 0 -1px 1px 0 rgb(27 31 35 / 5%), inset 0 1px 1px 0 hsl(0deg 0% 100% / 15%), 0 1px 2px 0 rgb(27 31 35 / 5%);
+}
+
+.dark button.big {
+    box-shadow: inset 0 -1px 1px 0 rgb(27 31 35 / 5%), inset 0 1px 1px 0 hsla(0, 0%, 0%, 0.15), 0 1px 2px 0 rgb(27 31 35 / 5%);
 }
 
 .light button {
@@ -469,7 +575,7 @@ button {
 .dark button {
     background: rgb(50, 50, 50);
     color: rgb(240, 240, 240);
-    border-radius: .2rem;
+    border-radius: .5rem;
 }
 
 .light button:hover {
@@ -497,7 +603,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .card {
     padding: 20px;
-    border-radius: .2rem;
+    border-radius: .5rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.15);  
     width: fit-content;
@@ -632,6 +738,7 @@ label.switch {
     margin-left: 10px !important;
     cursor: pointer;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+    padding: 0px !important;
 }
 
 .topbar-icon:hover {
@@ -662,11 +769,20 @@ label.switch {
 .topbar-search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: gray;
     opacity: 1; /* Firefox */
-    font-weight: 300;
+    font-weight: 400;
 }
 
 input, button {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Satoshi', sans-serif !important;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: -1.44px;
 }
 
 .search-container {
@@ -850,7 +966,7 @@ input, button {
 }
 
 .dark .bg-primary {
-    background: #53aaf1;
+    background:#2196F3;
     color: rgb(240, 240, 240);
 }
 
@@ -873,12 +989,12 @@ button.bg-primary:hover {
 
 .light .friend:hover {
     background: rgba(0, 0, 0, 0.1);
-    border-radius: .2rem;
+    border-radius: .5rem;
 }
 
 .dark .friend:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: .2rem;
+    border-radius: .5rem;
 }
 
 .chip {
@@ -887,6 +1003,51 @@ button.bg-primary:hover {
     right: 10px;
     padding: 5px;
     margin: 0px;
-    border-radius: .2rem;
+    border-radius: .5rem;
     line-height: 10px;
+}
+
+#avatar-canvas {
+    width: 800px;
+    height: 600px;
+    background: white;
+    border-radius: .5rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.avatar .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-profile {
+    width: 300px;
+    height: 300px;
+    background-image: url(./assets/avatar/profile.png);
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: -400px;
+    margin-bottom: -250px;
+}
+
+.hero .content header {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    margin-top: -41px;
+    padding: 0px;
+    background-image: url(./assets/hero/62279d6b214710af53a337f3_img-bg-gradient.png);
+    background-size: cover;
+    box-sizing: border-box;
+    padding-top: 80px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

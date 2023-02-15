@@ -1,8 +1,8 @@
 -log in [DONE]
--home page
+-home page [DECENT]
 -discover page
 -profile
 -game page template(the page you see when you select a game, it has a name, description who made it, a play button, some images of the game and so on)
 -creations page (where you can open and create new games)
--character editor
+-character editor [DOING]
 -store (with categories and stuff)
