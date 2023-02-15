@@ -471,7 +471,7 @@ input:checked+.slider:before {
     z-index: 0;
     background-image: url(./assets/hero/62279d6b214710af53a337f3_img-bg-gradient.png);
     background-size: cover;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .login * {
