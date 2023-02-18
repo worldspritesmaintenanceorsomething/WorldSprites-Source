@@ -689,27 +689,27 @@ label.switch {
 }
 
 .light .logo {
-    background-image: url(assets/branding/logo_with_test.png);
+    background-image: url(assets/branding/LogoWithTextBlack.svg);
 }
 
 .dark .logo {
-    background-image: url(assets/branding/logo_with_text_white.png);
+    background-image: url(assets/branding/LogoWithTextWhite.svg);
 }
 
 .login-logo {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 300px;
+    width: 335px;
     height: 100px;
 }
 
 .light .login-logo {
-    background-image: url(assets/branding/logo_with_test.png);
+    background-image: url(assets/branding/LogoWithTextBlack.svg);
 }
 
 .dark .login-logo {
-    background-image: url(assets/branding/logo_with_text_white.png);
+    background-image: url(assets/branding/LogoWithTextWhite.svg);
 }
 
 .logo-topbar {
@@ -724,11 +724,11 @@ label.switch {
 }
 
 .light .logo-topbar {
-    background-image: url(assets/branding/icon_black.png) !important;
+    background-image: url(assets/branding/LogoBlack.svg) !important;
 }
 
 .dark .logo-topbar {
-    background-image: url(assets/branding/icon_white.png) !important;
+    background-image: url(assets/branding/LogoWhite.svg) !important;
 }
 
 .topbar input {
@@ -1551,7 +1551,7 @@ button.bg-primary:hover {
 }
 
 .topbar-icon {
-    font-size: 1.2pc;
+    font-size: 1pc;
 }
 
 .small-horizontal-topbar .topbar-button {
