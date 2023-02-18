@@ -4,25 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WorldSprites - Avatar</title>
+    <title>WorldSprites</title>
     <link rel="stylesheet" href="sprites.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./lib/transition.css">
+    <script src="./lib/transition.js"></script>
 </head>
-<body class="hero light">
+<body class="hero dark">
     <nav class="topbar" style="display: flex; align-items: center;">
         <a href="home.html" style="height: 40px;"><div class="logo logo-topbar"></div></a><span style="user-select: none; font-weight: 400;">WorldSprites</span>
     </nav>
 
     <main class="content">
-        <header>
-            <h2 style="margin-bottom: 0px;">Build</h2>
-            <h1>Awesome games</h1>
-            <h2>Without needing to code</h2>
-            <button class="bg-primary big" onclick="document.location.href = 'signup.html'">Try it now!</button>
-        </header>
+        <!--
 
+            Old Page
+
+            <header>
+                <h2 style="margin-bottom: 0px;" id="anim-1">Build</h2>
+                <div class="neon-container" style="">
+                    <h1 style="" class="neon">Awesome games</h1>
+                </div>
+                <h2 style="" id="anim-3">Without needing to code</h2>
+
+                <button style="opacity: 1;" class="bg-primary big button-neon" onclick="transitionToPage('./signup.html')" id="anim-4">Try it now!</button>
+            </header>
+
+        -->
+        <header>
+            <div class="motto" style="display: flex; flex-direction: row;">
+                <span id="anim-1" style="margin-right: 10px;">Build.</span>
+                <span id="anim-2" style="margin-right: 10px;">Share.</span>
+                <span id="anim-3" style="">Play.</span>
+            </div>
+            <h1 id="anim-4" style="">WorldSprites</h1>
+            <div class="button-container" id="anim-5" style="">
+                <button class="bg-primary big button-neon" onclick="transitionToPage('./signup.html')">Try it now!</button>
+            </div>
+
+        </header>
     </main>
+    <script src="./lib/motion.js"></script>
+    <script>
+        // Old Animation
+        /*
+        anim(º('#anim-1')).from('opacity: 0').to('opacity: 1').function('cubic-bezier(0.17, 0.96, 0.55, 0.96)').duration(
+            1).delay(0).run();
+
+        anim(º('.neon-container')).from('opacity: 0').to('opacity: 1').function('cubic-bezier(0.17, 0.96, 0.55, 0.96)').duration(
+            1).delay(1).run();
+        
+        anim(º('#anim-3')).from('opacity: 0').to('opacity: 1').function('cubic-bezier(0.17, 0.96, 0.55, 0.96)').duration(
+            1).delay(2).run();
+
+        anim(º('#anim-4')).from('opacity: 0').to('opacity: 1').function('cubic-bezier(0.17, 0.96, 0.55, 0.96)').duration(
+            1).delay(3).run();
+        */
+    </script>
 </body>
 </html>
