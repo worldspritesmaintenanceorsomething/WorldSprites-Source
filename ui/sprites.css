@@ -1578,3 +1578,76 @@ button.bg-primary:hover {
     position: absolute;
     top: calc(100vh - 200% - 5px);
 }
+
+.game-home {
+    overflow: hidden;
+}
+
+.game-home .content .game-image {
+    width: calc(100vw - 41px);
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    background: url(./assets/home/shrekinthebackrooms.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(100px);
+    z-index: 0 !important;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.game-home .content {
+    top: 0px !important;
+    left: 41px;
+    height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-home .content * {
+    z-index: 1000;
+    position: relative;
+    user-select: none;
+}
+
+.play-button {
+    width: 35px;
+    height: 35px;
+    position: absolute !important;
+    left: 50%;
+    bottom: 40px;
+    transform: translate(-50%, 0%);
+}
+
+.loading-screen {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) .5s opacity;
+    z-index: -1000;
+}
+
+.loading .loading-screen {
+    opacity: 1;
+    z-index: 99999;
+}
+
+.light .loading-screen {
+    background: #e2e2e2;
+}
+
+.dark .loading-screen {
+    background: #333333
+}
