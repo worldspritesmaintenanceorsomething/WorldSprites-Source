@@ -7,12 +7,12 @@ body {
 }
 
 .dark {
-    background: rgb(50, 50, 50);
+    background: #333333;
     color: rgb(223, 223, 223);
 }
 
 .light {
-    background: rgb(223, 223, 223);
+    background: #fcfaf9;
     color: rgb(50, 50, 50);
 }
 
@@ -112,6 +112,7 @@ body {
     margin-bottom: 5px;
     user-select: none;
     cursor: pointer;
+    border-radius: .5rem;
 }
 
 .light .section-title {
@@ -125,8 +126,18 @@ body {
 .section-content {
     width: 100%;
     padding: 5px;
-
+    border-radius: .5rem;
     box-sizing: border-box;
+}
+
+.section-content *:first-child {
+    border-top-left-radius:  .5rem;
+    border-top-right-radius:  .5rem;
+}
+
+.section-content *:last-child {
+    border-bottom-left-radius:  .5rem;
+    border-bottom-right-radius:  .5rem;
 }
 
 .light .section-content {
@@ -221,6 +232,8 @@ body {
     transition: opacity .2s .5s cubic-bezier(0.075, 0.82, 0.165, 1);
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    border-radius: .5rem !important;
 }
 
 .with-tooltip:hover .tooltip {
@@ -381,6 +394,7 @@ input:checked+.slider:before {
     left: 0px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: .5rem;
 }
 
 .light .toolbar {
@@ -509,6 +523,10 @@ button {
     box-shadow: inset 0 -1px 1px 0 rgb(27 31 35 / 5%), inset 0 1px 1px 0 hsla(0, 0%, 0%, 0.15), 0 1px 2px 0 rgb(27 31 35 / 5%);
 }
 
+.topbar button {
+    box-shadow: none !important;
+}
+
 button.big {
     height: 35px;
     display: flex;
@@ -583,6 +601,7 @@ h6 {
     border: 1px solid rgba(0, 0, 0, 0.15);
     width: fit-content;
     float: left;
+    border-radius: .5rem;
 }
 
 .login .card {
@@ -618,11 +637,11 @@ a {
 }
 
 .light a {
-    color: #2196F3;
+    color: #e63946;
 }
 
 .dark a {
-    color: #53aaf1;
+    color: #e63946;
 }
 
 form .other-options {
@@ -674,6 +693,22 @@ label.switch {
 }
 
 .dark .logo {
+    background-image: url(assets/branding/logo_with_text_white.png);
+}
+
+.login-logo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 100px;
+}
+
+.light .login-logo {
+    background-image: url(assets/branding/logo_with_test.png);
+}
+
+.dark .login-logo {
     background-image: url(assets/branding/logo_with_text_white.png);
 }
 
@@ -756,6 +791,7 @@ input,
 button {
     font-family: 'Satoshi', sans-serif !important;
     font-weight: 400;
+    border-radius: .25rem !important;
 }
 
 h1 {
@@ -787,12 +823,33 @@ h1 {
     font-weight: 600;
 }
 
+body.home {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+body.home::before {
+    content: '';
+    background: url(./assets/hero/62279d6b214710af53a337f3_img-bg-gradient.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
 .home .content {
     position: absolute;
     top: 40px;
-    left: 0px;
-    width: calc(100vw) !important;
+    left: 100px;
+    width: calc(100vw - 200px) !important;
     height: calc(100vh - 40px);
+    box-sizing: border-box;
+    margin: 0px;
 }
 
 .input-icons i {
@@ -806,8 +863,8 @@ h1 {
 
 .profile-picture {
     border-radius: 100%;
-    width: 30px;
-    height: 30px;
+    width: 1.2pc;
+    height: 1.2pc;
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-left: 10px;
 }
@@ -848,9 +905,9 @@ h1 {
 }
 
 .games .card {
-    width: 140px;
+    width: 180px;
     height: 140px;
-    margin: 2px;
+    margin: 4px;
     padding: 0px;
     box-sizing: border-box;
     overflow: hidden;
@@ -941,17 +998,17 @@ h1 {
 }
 
 .light .bg-primary {
-    background: #2196F3;
+    background: #e63946;
     color: rgb(240, 240, 240);
 }
 
 .dark .bg-primary {
-    background: #2196F3;
+    background: #e63946;
     color: rgb(240, 240, 240);
 }
 
 button.bg-primary:hover {
-    background: #1d7ac7 !important;
+    background: #cc3440 !important;
 }
 
 .friend {
@@ -969,12 +1026,10 @@ button.bg-primary:hover {
 
 .light .friend:hover {
     background: rgba(0, 0, 0, 0.1);
-    border-radius: 0rem;
 }
 
 .dark .friend:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 0rem;
 }
 
 .chip {
@@ -983,7 +1038,7 @@ button.bg-primary:hover {
     right: 10px;
     padding: 5px;
     margin: 0px;
-    border-radius: 0rem;
+    border-radius: 1rem;
     line-height: 10px;
 }
 
@@ -991,7 +1046,7 @@ button.bg-primary:hover {
     width: 800px;
     height: 600px;
     background: white;
-    border-radius: 0rem;
+    border-radius: .5rem;
     border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -1299,7 +1354,7 @@ button.bg-primary:hover {
 
 .button-neon {
     position: relative;
-    transition:cubic-bezier(0.6, -0.28, 0.735, 0.045) .2s;
+    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) .2s;
 }
 
 .button-neon::before {
@@ -1332,48 +1387,194 @@ button.bg-primary:hover {
     font-size: 2pc;
 }
 
+.text-bigger {
+    font-size: 3pc;
+}
+
 .text-large {
     font-size: 4pc;
 }
 
-.form-button {
-    border-radius: 0 !important;
-}
-
 .content-section {
-    width: 100vw;
+    width: 100%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: .5rem;
 }
 
 .welcome-section {
     height: 200px;
     display: flex;
     align-items: center;
-    background: rgb(60, 60, 60);
     padding-left: 20px;
     padding-right: 20px;
     box-sizing: border-box;
+}
+
+.dark .welcome-section {
+    background: rgb(60, 60, 60);
+}
+
+.light .welcome-section {
+    background: linear-gradient(rgb(240, 240, 240), rgb(230, 230, 230));
 }
 
 .welcome-pfp {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: rgb(50, 50, 50);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.15);
     overflow: hidden;
     margin: 0px;
     padding: 0px;
     position: relative;
-    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
+    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+    /* this fixes the overflow:hidden in Chrome/Opera */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.dark .welcome-pfp {
+    background: rgb(50, 50, 50);
+}
+
+.light .welcome-pfp {
+    background: rgb(255, 255, 255);
+}
+
 .welcome-pfp * {
     width: 100%;
     height: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+
+.welcome-content {
+    margin-left: 20px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.button-group-right {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.button-group-left {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.discover-section {
+    box-shadow: none;
+    border: none;
+}
+
+.card:has(.card-notification) {
+    position: relative;
+    overflow: visible;
+}
+
+.card-notification {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    background: #e63946;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-notification::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(./assets/home/profile.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+.dark::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: .5rem;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+}
+
+/* Handle on hover */
+.dark::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Handle */
+.light::-webkit-scrollbar-thumb {
+    background: #e2e2e2;
+    border-radius: .5rem;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+}
+
+/* Handle on hover */
+.light::-webkit-scrollbar-thumb:hover {
+    background: rgb(211, 211, 211)
+}
+
+.small-horizontal-topbar {
+    width: 41px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.topbar-icon {
+    font-size: 1.2pc;
+}
+
+.small-horizontal-topbar .topbar-button {
+    width: 41px;
+    height: 41px !important;
+    margin: 0px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.small-horizontal-topbar .topbar-icon {
+    width: 41px;
+    height: 41px !important;
+    top: 0px;
+    left: 0px;
+}
+
+.small-horizontal-topbar .profile-picture {
+    margin-left: 0px;
+}
+
+.topbar-bottom {
+    position: absolute;
+    top: calc(100vh - 200% - 5px);
 }
