@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,17 +13,21 @@
     <link rel="stylesheet" href="./lib/transition.css">
     <script src="./lib/transition.js"></script>
 </head>
+
 <body class="game-home dark">
     <nav class="topbar small-horizontal-topbar" style="display: flex;">
-        <a href="home.html"><div class="logo logo-topbar"></div></a>
+        <a href="home.html">
+            <div class="logo logo-topbar"></div>
+        </a>
         <div class="topbar-right">
             <button class="topbar-icon"><i class="fa-solid fa-house"></i></button>
             <button class="topbar-icon"><i class="fa-solid fa-compass"></i></button>
             <button class="topbar-icon"><i class="fa-solid fa-bag-shopping"></i></button>
-            
+
             <div class="topbar-bottom">
                 <button class="topbar-icon"><i class="fa-solid fa-gear"></i></button>
-                <button class="topbar-icon"><img class="profile-picture" src="assets/home/profile.png" alt="" height="30px"></button>
+                <button class="topbar-icon"><img class="profile-picture" src="assets/home/profile.png" alt=""
+                        height="30px"></button>
             </div>
         </div>
     </nav>
@@ -34,9 +39,70 @@
 
         <div class="header">
             <h1>Shrek in the Backrooms</h1>
-            <p>@JohnDoe</p>
-        </div>
+            <h3>@JohnDoe</h3>
 
+            <p class="game-description">
+                In this survival game, you will have to survive Shrek in the backrooms. Explore, run and take
+                precautions. Don't let Shrek take you!!! :(
+            </p>
+
+            <div class="card glass" style="padding: 0px; margin-right: 5px; box-sizing: border-box; width: 176.44px; height: 89px;">
+                <div class="slideshow-images">
+                    <img src="./assets/home/shrekinthebackrooms.png" alt="">
+                    <img src="./assets/home/profile.png" alt="">
+                    <img src="./assets/home/IMG_1492.png" alt="">
+                </div>
+                <div class="slideshow-buttons">
+                    <a href="javascript:backwardSlideshow()" class="interact-a slideshow-left-button">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                    <a href="javascript:nextSlideshow()" class="interact-a slideshow-right-button">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <script>
+                    const images = document.querySelectorAll('.slideshow-images *')
+
+                    let currentIndex = 0;
+
+                    function updateSlideshow() {
+                        for(let i = 0; i < images.length; i++) {
+                            images.item(i).style.opacity = 0
+                        }
+                        images.item(currentIndex).style.opacity = 1
+                    }
+
+                    function nextSlideshow() {
+                        currentIndex++;
+                        if(currentIndex == images.length) {
+                            currentIndex = 0
+                        }
+                        updateSlideshow()
+                    }
+
+                    function backwardSlideshow() {
+                        if(currentIndex == 0) {
+                            currentIndex = images.length
+                        }
+                        currentIndex--;
+                        updateSlideshow()
+                    }
+
+                    updateSlideshow()
+                </script>
+            </div>
+
+            <div class="card glass">
+                <a href="#like" class="interact-a" style="margin-right: 100px;"><i
+                        class="fa-solid fa-thumbs-up"></i></a>
+                <a href="#dislike" class="interact-a"><i class="fa-solid fa-thumbs-down"></i></a>
+                <div style="margin-top: 5px;">
+                    <span>10.1k</span>
+                    <span style="position: absolute; right: 0px;">0</span>
+                </div>
+
+            </div>
+        </div>
 
         <button class="play-button" onclick="document.body.classList.add('loading')">
             <i class="fa-solid fa-play"></i>
@@ -48,4 +114,5 @@
         <img src="./assets/hero/loading.svg" alt="" width="100px" style="pointer-events: none; user-select: none; ">
     </div>
 </body>
+
 </html>

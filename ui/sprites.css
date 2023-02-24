@@ -93,7 +93,6 @@ body {
 }
 
 .hero .content {
-    text-align: center;
     box-sizing: border-box;
 }
 
@@ -1650,4 +1649,92 @@ button.bg-primary:hover {
 
 .dark .loading-screen {
     background: #333333
+}
+
+.game-description {
+    width: calc(100% - 40px);
+    height: fit-content;
+}
+
+.glass {
+    background: transparent !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.light .glass::before {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass::before {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    text-align: left;
+    justify-content: left;
+}
+
+.header h1 {
+    text-align: left;
+}
+
+.interact-a {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+}
+
+.interact-a:hover {
+    opacity: .5
+}
+
+.slideshow-images * {
+    position: absolute !important;
+    left: 0px;
+    top: 50%;
+    width: 100%;
+    transform: translate(0%, -25%);
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+}
+
+.slideshow-buttons {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slideshow-left-button {
+    position: absolute !important;
+    left: 10px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow-right-button {
+    position: absolute !important;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
