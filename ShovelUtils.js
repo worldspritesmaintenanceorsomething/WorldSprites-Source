@@ -27,6 +27,7 @@ memoryopen = 0;
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/CanvasEffects.js");
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/global-coordinate.js");
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Time.js");
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Cast.js");
   'use strict';
 
   //Code from https://www.growingwiththeweb.com/2017/12/fast-simple-js-fps-counter.html

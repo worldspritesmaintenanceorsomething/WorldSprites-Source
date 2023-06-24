@@ -1,4 +1,5 @@
-@theme-white
+theme-white
 #ffffff
 #dedede
 #ffffff
+#5e99ff

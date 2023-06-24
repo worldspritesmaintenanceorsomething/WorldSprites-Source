@@ -1,7 +1,6 @@
-EDITOR
+theme-white
 #ffffff
 #dedede
 #ffffff
+#5e99ff
 -100
-40
-5
