@@ -1,0 +1,7 @@
+theme-color
+#e5d98a
+https://bgpatterncolor
+#ff2b64
+#ff2b64
+-100
+#cf2452

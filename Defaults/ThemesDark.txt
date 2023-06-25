@@ -1,0 +1,7 @@
+theme-dark
+#e5d98a
+https://bgpatterdark
+#ff2b64
+#ff2b64
+-100
+#cf2452
