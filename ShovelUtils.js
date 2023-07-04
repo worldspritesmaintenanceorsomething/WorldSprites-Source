@@ -1,12 +1,16 @@
 try{
 scaffolding;
 (function(Scratch) {
-console.log("ShovelUtils v1.1")
+  console.log("ShovelUtils v1.2")
 tempImageLoad = null
 string = null;
+output = null;
 temp = null;
 tempVAR = null;
 memoryopen = 0;
+R = null;
+G = null;
+B = null;
   const vm = Scratch.vm;
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/utilities.js");
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/beta.js");
@@ -26,13 +30,58 @@ memoryopen = 0;
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/discord.js");
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/CanvasEffects.js");
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/global-coordinate.js");
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/numericalencoding.js");
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/CommentBlocks.js");
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Time.js");
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/MoreTimers.js");
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Cast.js");
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/penPlus.js");
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/clippingblending.js");
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/LooksPlus.js");
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/ColorPicker.js");
   'use strict';
 
   //Code from https://www.growingwiththeweb.com/2017/12/fast-simple-js-fps-counter.html
 const timesF = [];
 let fpsF;
+
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
+function editDistance(s1, s2) {
+  s1 = s1.toLowerCase();
+  s2 = s2.toLowerCase();
+
+  var costs = new Array();
+  for (var i = 0; i <= s1.length; i++) {
+    var lastValue = i;
+    for (var j = 0; j <= s2.length; j++) {
+      if (i == 0)
+        costs[j] = j;
+      else {
+        if (j > 0) {
+          var newValue = costs[j - 1];
+          if (s1.charAt(i - 1) != s2.charAt(j - 1))
+            newValue = Math.min(Math.min(newValue, lastValue),
+              costs[j]) + 1;
+          costs[j - 1] = lastValue;
+          lastValue = newValue;
+        }
+      }
+    }
+    if (i > 0)
+      costs[s2.length] = lastValue;
+  }
+  return costs[s2.length];
+}
+
+
 
 function refreshLoop() {
   window.requestAnimationFrame(() => {
@@ -277,8 +326,92 @@ refreshLoop()
             }
           }
         },
-         
-
+        {
+          opcode: 'getblocksjson',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Get project Json',
+        },
+        {
+          opcode: 'similarity',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Compare [s1] and [s2]',
+          arguments: {
+            s1: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'Test'
+            },
+            s2: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'Test2'
+            }
+          }
+        },
+        {
+          opcode: 'snapshotStage',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'snapshot stage',
+          disableMonitor: true
+        },
+        {
+          opcode: 'uploadtext',
+          blockType: Scratch.BlockType.COMMAND,
+          text: 'Upload [TEXT] with ID [ID]',
+          arguments:{
+            TEXT: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'Test'
+            },
+            ID: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'Test'
+            }
+          }
+        },
+        {
+          opcode: 'getuploadinfo',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Wastebin info',
+          disableMonitor: true
+        },
+        {
+          opcode: 'getR',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Get R',
+          disableMonitor: true
+        },
+        {
+          opcode: 'getG',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Get G',
+          disableMonitor: true
+        },
+        {
+          opcode: 'getB',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Get B',
+          disableMonitor: true
+        },
+        {
+          opcode: 'convrgb',
+          blockType: Scratch.BlockType.COMMAND,
+          text: 'Convert [HEX] to RGB',
+          arguments:{
+            HEX: {
+              type: Scratch.ArgumentType.COLOR,
+            }
+          }
+        },
+        {
+          opcode: 'setClipboard',
+          blockType: Scratch.BlockType.COMMAND,
+          text: 'set [STRING] to clipboard',
+          arguments: {
+            STRING: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'apple',
+            }
+          }
+        }
       ]
       }
     }
@@ -434,11 +567,82 @@ downloadURI({URI, NAME}) {
   link.download = NAME;
   link.click();
 }
+getblocksjson({}){
+  var func = eval('vm._saveProjectZip().files["project.json"]._data');
+  return func;
+}
+similarity({s1, s2}) {
+  var longer = s1;
+  var shorter = s2;
+  if (s1.length < s2.length) {
+    longer = s2;
+    shorter = s1;
+  }
+  var longerLength = longer.length;
+  if (longerLength == 0) {
+    return 1.0;
+  }
+  return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+}
+
+snapshotStage(args, util) {
+  return new Promise(resolve => {
+    // TODO need to make sure VM handles skin privacy with screenshots
+    Scratch.vm.runtime.renderer.requestSnapshot(uri => {
+      resolve(uri);
+    });
+  });
+}
+uploadtext(args){
+  fetch("https://corsproxy.io/?https://wastebin-1-f9697939.deta.app/api/new", {
+  method: "POST",
+  body: JSON.stringify({
+  "content": args.TEXT,
+  "filename": "hahaha",
+  "highlighting_language": "",
+  "ephemeral": false,
+  "expire_at": 0,
+  "expire_in": 0,
+  "date_created": 0,
+  "id": args.ID
+}),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+})
+  .then((response) => response.json())
+  .then((json) => output = JSON.stringify(json));
+}
+
+getuploadinfo(){
+  return output;
+}
+
+convrgb(args){
+  R = hexToRgb(args.HEX).r;
+  G = hexToRgb(args.HEX).g;
+  B = hexToRgb(args.HEX).b;
+}
 
 
+getR(){
+  return R;
+}
+getG(){
+  return G;
+}
+getB(){
+  return B;
+}
+setClipboard(args) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(args.STRING);
+  }
+}
 }
 
 
   Scratch.extensions.register(new ShovelUtils());
 })(Scratch);
+
 } catch(err) {}
