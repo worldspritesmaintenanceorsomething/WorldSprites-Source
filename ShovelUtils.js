@@ -1,11 +1,13 @@
 try{
-scaffolding;
+  scaffolding;
 (function(Scratch) {
-  console.log("ShovelUtils v1.2")
+  console.log("ShovelUtils v1.1")
 tempImageLoad = null
 string = null;
 output = null;
 temp = null;
+NSFWINFO = null;
+SentDataUrl = null;
 tempVAR = null;
 memoryopen = 0;
 R = null;
@@ -39,6 +41,13 @@ B = null;
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/clippingblending.js");
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/LooksPlus.js");
   vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/ColorPicker.js");
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/vars2.js")
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/upload.js")
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/LZ-String.js")
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/zip.js")
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/localstorage.js")
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Mouse.js")
+  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Skins.js")
   'use strict';
 
   //Code from https://www.growingwiththeweb.com/2017/12/fast-simple-js-fps-counter.html
@@ -368,6 +377,17 @@ refreshLoop()
           }
         },
         {
+          opcode: 'seturlprovider',
+          blockType: Scratch.BlockType.COMMAND,
+          text: 'URL provider [URL]',
+          arguments:{
+            URL: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'Test'
+            }
+          }
+        },
+        {
           opcode: 'getuploadinfo',
           blockType: Scratch.BlockType.REPORTER,
           text: 'Wastebin info',
@@ -411,6 +431,22 @@ refreshLoop()
               defaultValue: 'apple',
             }
           }
+        },
+        {
+          opcode: 'getIfNSFW',
+          blockType: Scratch.BlockType.COMMAND,
+          text: 'Get NSFW info for [URL]',
+          arguments: {
+            URL: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: '',
+            }
+          }
+        },
+        {
+          opcode: 'genNSFWINFO',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Get NSFW API response'
         }
       ]
       }
@@ -587,18 +623,17 @@ similarity({s1, s2}) {
 
 snapshotStage(args, util) {
   return new Promise(resolve => {
-    // TODO need to make sure VM handles skin privacy with screenshots
     Scratch.vm.runtime.renderer.requestSnapshot(uri => {
       resolve(uri);
     });
   });
 }
 uploadtext(args){
-  fetch("https://corsproxy.io/?https://wastebin-1-f9697939.deta.app/api/new", {
+  fetch("https://corsproxy.io/?"+SentDataUrl, {
   method: "POST",
   body: JSON.stringify({
   "content": args.TEXT,
-  "filename": "hahaha",
+  "filename": btoa(Math.random()),
   "highlighting_language": "",
   "ephemeral": false,
   "expire_at": 0,
@@ -639,10 +674,40 @@ setClipboard(args) {
     navigator.clipboard.writeText(args.STRING);
   }
 }
+getIfNSFW(args) {
+  NSFWINFO = '';
+  const data = JSON.stringify({
+    url: args.URL
+  });
+  
+  const xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+  
+  xhr.addEventListener('readystatechange', function () {
+    if (this.readyState === this.DONE) {
+      NSFWINFO = this.responseText;
+    }
+  });
+  
+  xhr.open('POST', 'https://nsfw-images-detection-and-classification.p.rapidapi.com/adult-content');
+  xhr.setRequestHeader('content-type', 'application/json');
+  xhr.setRequestHeader('X-RapidAPI-Key', '33aec59b92msh261f2ec0de44e3bp1364c6jsn65f63f8914ae');
+  xhr.setRequestHeader('X-RapidAPI-Host', 'nsfw-images-detection-and-classification.p.rapidapi.com');
+  
+  xhr.send(data);
+}
+
+genNSFWINFO() {
+  return NSFWINFO;
+}
+
+seturlprovider(args) {
+  SentDataUrl = args.URL;
+}
+
 }
 
 
   Scratch.extensions.register(new ShovelUtils());
 })(Scratch);
-
 } catch(err) {}
