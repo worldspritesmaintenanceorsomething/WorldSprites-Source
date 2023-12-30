@@ -1,5 +1,4 @@
-try{
-  scaffolding;
+
 (function(Scratch) {
   console.log("ShovelUtils v1.1")
 tempImageLoad = null
@@ -14,40 +13,6 @@ R = null;
 G = null;
 B = null;
   const vm = Scratch.vm;
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/utilities.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/beta.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/files.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/runtime-options.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/CloudLinkWS.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/pointerlock.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/stretch.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/encoding.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/navigator.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Cookie.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/cursor.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/penplus.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/cameracontrols.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/vars.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/profanity.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/discord.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/CanvasEffects.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/global-coordinate.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/numericalencoding.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/CommentBlocks.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Time.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/MoreTimers.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Cast.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/penPlus.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/clippingblending.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/LooksPlus.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/ColorPicker.js");
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/vars2.js")
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/upload.js")
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/LZ-String.js")
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/zip.js")
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/localstorage.js")
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Mouse.js")
-  vm.extensionManager.loadExtensionURL("https://worldsprites.com/lib/Skins.js")
   'use strict';
 
   //Code from https://www.growingwiththeweb.com/2017/12/fast-simple-js-fps-counter.html
@@ -710,4 +675,3 @@ seturlprovider(args) {
 
   Scratch.extensions.register(new ShovelUtils());
 })(Scratch);
-} catch(err) {}
