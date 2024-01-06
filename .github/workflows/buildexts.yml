@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: read|write
+  contents: write
 
 jobs:
   build:
@@ -16,8 +16,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: build exts
-    - run: unzip wsClient.pmp
-    - run: sed -i "s/http:\/\/localhost:8000/https:\/\/4672dcd4.worldsprites-source.pages.dev/g" wsClient/project.json
-    - run: zip -r wsClient.pmp wsClient
-    - run: rm -r wsClient
+    - name: build extsd
+      run: unzip wsClient.pmp & sed -i "s/http:\/\/localhost:8000/https:\/\/4672dcd4.worldsprites-source.pages.dev/g" wsClient/project.json & zip -r wsClient.pmp wsClient & rm -r wsClient
