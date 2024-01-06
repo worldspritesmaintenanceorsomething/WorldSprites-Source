@@ -19,12 +19,12 @@ jobs:
       run: unzip wsClient.pmp -d ./wsClient
     - name: sed
       run: sed -i "s#http://localhost:8000#https://raw.githubusercontent.com/worldspritesmaintenanceorsomething/WorldSprites-Source/main#g" wsClient/project.json
-    - name: remove dir
-      run: rm -r wsClient
     - name: remove zip
       run: rm wsClient.pmp
     - name: zip
       run: zip -r wsClient.pmp wsClient
+    - name: remove dir
+      run: rm -r wsClient
     - name: Commit files
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
