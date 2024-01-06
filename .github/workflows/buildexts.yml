@@ -23,3 +23,8 @@ jobs:
       run: zip -r wsClient.pmp wsClient
     - name: remove
       run: rm -r wsClient
+    - name: Validate links
+      uses: ad-m/report-link-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    
