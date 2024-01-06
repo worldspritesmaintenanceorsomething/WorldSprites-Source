@@ -23,8 +23,14 @@ jobs:
       run: zip -r wsClient.pmp wsClient
     - name: remove
       run: rm -r wsClient
-    - name: Validate links
-      uses: ad-m/report-link-action@master
+    - name: Commit files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -a -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
     
