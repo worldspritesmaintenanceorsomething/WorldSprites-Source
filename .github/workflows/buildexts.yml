@@ -3,8 +3,6 @@ name: Build the client extensions
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 permissions: write-all
 
