@@ -18,7 +18,7 @@ jobs:
     - name: unzip
       run: unzip wsClient.pmp -d ./wsClient
     - name: sed
-      run: sed -i "s#http://localhost:8000#https://raw.githubusercontent.com/worldspritesmaintenanceorsomething/WorldSprites-Source/main#g" wsClient/project.json
+      run: sed -i "s#http://localhost:8000#https://raw.githack.com/worldspritesmaintenanceorsomething/WorldSprites-Source/main#g" wsClient/project.json
     - name: remove zip
       run: rm wsClient.pmp
     - name: zip
