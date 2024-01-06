@@ -15,7 +15,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: build extsd
-      run: unzip wsClient.pmp
+    - name: unzip
+      run: unzip wsClient.pmp;zip -r wsClient.pmp wsClient;rm -r wsClient
+    - name: sed
+      run: sed -i "s/http:\/\/localhost:8000/https:\/\/4672dcd4.worldsprites-source.pages.dev/g" wsClient/project.json
+    - name: zip
+      run: zip -r wsClient.pmp wsClient
+    - name: remove
+      run: rm -r wsClient
     
 # unzip wsClient.pmp & sed -i "s/http:\/\/localhost:8000/https:\/\/4672dcd4.worldsprites-source.pages.dev/g" wsClient/project.json & zip -r wsClient.pmp wsClient & rm -r wsClient
